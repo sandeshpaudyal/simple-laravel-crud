@@ -12,7 +12,7 @@
 						<div class="image fit flush">
 							<img src="images/pic02.jpg" alt="" />
 						</div>
-						<header class="special">
+						<header class="special"> 
 							@if(Session::has('success'))
 				        		{{ Session::get('success')}}
 				        	@endif

@@ -38,7 +38,7 @@ class ContactController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
          Contact::create($request->except('_token')); 
          return redirect()->route('contact.index')->with('success','contact added.');
@@ -67,7 +67,7 @@ class ContactController extends Controller
         if (!$contact) {
             abort(404);
         }
-        return view('partials/contact', compact('contact'));
+        return view('partials/contact-edit', compact('contact'));
     }
 
     /**
